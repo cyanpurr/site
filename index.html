@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>cyanpurr!</title>
+        <meta name="theme-color" content="#00FFFF">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="cyanpurr!">
+        <meta property="og:description" content="This place is home to many of my amazing projects and everything I'm proud of.">
+        <meta property="og:site_name" content="cyanpurr!">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="cyanpurr!">
+        <meta name="twitter:description" content="This place is home to many of my amazing projects and everything I'm proud of.">
+        <meta name="twitter:site" content="@cyanpurr">
+        <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            html, body {
+                margin: 0;
+                min-height: 100vh;
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                background: linear-gradient(to bottom, #7dffff, #4cc2ff);
+                font-family: "Titan One", sans-serif;
+                text-align: center;
+                padding: 40px 15px;
+                overflow-x: hidden;
+            }
+
+            .banner {
+                display: flex;
+                justify-content: center;
+                gap: .02em;
+                font-size: clamp(2rem, 10vw, 6.8rem); 
+                user-select: none;
+                margin-top: 20px;
+            }
+
+            .banner span {
+                display: inline-block;
+                color: #fff;
+                -webkit-text-stroke: max(2px, 0.04em) #000;
+                text-shadow:
+                    0.03em 0.03em 0 #000,
+                    0.06em 0.06em 0.1em rgba(0, 0, 0, .35);
+                --i: 0;
+                animation:
+                    bob 2.2s ease-in-out infinite calc(var(--i) * -.15s),
+                    cycle 4s linear infinite calc(var(--i) * -.3s);
+            }
+
+            @keyframes bob {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-0.25em); }
+            }
+
+            @keyframes cycle {
+                0% { color: #ff4040; }
+                16.66% { color: #ffa500; }
+                33.33% { color: #ffd700; }
+                50% { color: #46ff46; }
+                66.66% { color: #4cc2ff; }
+                83.33% { color: #9370db; }
+                100% { color: #ff4040; }
+            }
+
+            .funtext {
+                margin-top: 2rem;
+                color: #fff;
+                -webkit-text-stroke: max(1px, 0.03em) #000;
+                user-select: none;
+                font-size: clamp(1.1rem, 3.5vw, 2rem);
+                max-width: 900px;
+                padding: 0 10px;
+            }
+
+            .categories {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+                margin: 2rem 0;
+            }
+
+            .btn {
+                font-family: inherit;
+                font-size: 1.1rem;
+                padding: 10px 20px;
+                border: 3px solid #000;
+                border-radius: 12px;
+                color: #fff;
+                cursor: pointer;
+                -webkit-text-stroke: 1px #000;
+                text-shadow: 2px 2px 0 #000;
+                transition: transform 0.1s ease;
+            }
+
+            .btn:hover {
+                transform: scale(1.05);
+            }
+
+            .btn[data-category="Featured"] { background-color: #ff4040; }
+            .btn[data-category="Programs"] { background-color: #ffa500; }
+            .btn[data-category="Websites"] { background-color: #46ff46; }
+            .btn[data-category="Experiments"] { background-color: #9370db; }
+            .btn[data-category="Tests"] { background-color: #ff69b4; }
+
+            .projects {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+                max-width: 1100px;
+                width: 100%;
+                padding: 10px;
+            }
+
+            .project {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image {
+                width: 100%;
+                aspect-ratio: 16 / 9;
+                object-fit: cover;
+                border-radius: 15px;
+                border: 4px solid #ffffff;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                transition: transform 0.2s ease;
+            }
+
+            .image:hover {
+                transform: scale(1.03);
+            }
+
+            .title {
+                margin: 15px 0 5px 0;
+                font-size: 1.4rem;
+                color: #fff;
+                -webkit-text-stroke: 1px #000;
+                text-shadow: 2px 2px 0 #000;
+            }
+
+            .about {
+                margin: 0;
+                font-size: 1rem;
+                color: #fff;
+                -webkit-text-stroke: 0.8px #000;
+                text-shadow: 1px 1px 0 #000;
+            }
+
+            @media (max-width: 850px) {
+                .projects{
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 550px) {
+                .projects{
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            @media (prefers-color-scheme: dark) {
+                body {
+                    background: linear-gradient(to bottom, #222, #000);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="banner" aria-label="cyanpurr!">
+            <span style="--i:0">c</span>
+            <span style="--i:1">y</span>
+            <span style="--i:2">a</span>
+            <span style="--i:3">n</span>
+            <span style="--i:4">p</span>
+            <span style="--i:5">u</span>
+            <span style="--i:6">r</span>
+            <span style="--i:7">r</span>
+            <span style="--i:8">!</span>
+        </div>
+
+        <h1 class="funtext">meow</h1>
+
+        <div class="categories">
+            <button class="btn" data-category="Featured" onclick="filter('Featured')">Featured</button>
+            <button class="btn" data-category="Programs" onclick="filter('Programs')">Programs</button>
+            <button class="btn" data-category="Websites" onclick="filter('Websites')">Websites</button>
+            <button class="btn" data-category="Experiments" onclick="filter('Experiments')">Experiments</button>
+            <button class="btn" data-category="Tests" onclick="filter('Tests')">Tests</button>
+        </div>
+
+        <div class="projects" id="grid"></div>
+
+        <script>
+            const texts = ["*notices u click page* hewwo!!1", "i create cool things! i think... meow :3", "uhhh me is cool nerd cat,,,"];
+            document.querySelector('.funtext').textContent = texts[Math.floor(Math.random() * texts.length)];
+
+            const projects = [
+                {
+                    category: "Featured",
+                    title: "Cyanbot",
+                    description: "Discord Bot for furries. Created with the goal to implement as much features as possible.",
+                    image: "/images/cyanbot.png",
+                    link: "https://top.gg/bot/1520590735961882736"
+                },
+                {
+                    category: "Programs",
+                    title: "Boykisser4PSP",
+                    description: "Boykisser ported to the PlayStation Portable.",
+                    image: "/images/boykisser4psp.jpg",
+                    link: "https://github.com/cyanpurr/Boykisser4PSP/releases/tag/v1.0.0"
+                },
+                {
+                    category: "Programs",
+                    title: "Privacy",
+                    description: "Attempts to change the opacity of your screen on Windows.",
+                    image: "/images/privacy.jpg",
+                    link: "https://github.com/cyanpurr/small-programs/blob/main/privacy.py"
+                },
+                {
+                    category: "Programs",
+                    title: "CopyURL",
+                    description: 'A "Default Browser" for Windows that actually just copies the URL instead.',
+                    image: "/images/copyurl.jpg",
+                    link: "https://github.com/cyanpurr/small-programs/tree/main/copyurl"
+                },
+                {
+                    category: "Websites",
+                    title: "cyanpurr!",
+                    description: "ur on it already silly :3",
+                    image: "/images/cyanpurr.png",
+                    link: "https://cyanpurr.cc.cd"
+                }
+            ];
+
+            function render(projects) {
+                const grid = document.getElementById('grid');
+                grid.innerHTML = '';
+
+                projects.forEach(project => {
+                    const card = document.createElement('div');
+                    card.className = 'project';
+                    card.innerHTML = `
+                        <a href="${project.link}" target="_blank" rel="noopener noreferrer">
+                            <img src="${project.image}" alt="${project.title}" class="image">
+                        </a>
+                        <h2 class="title">${project.title}</h2>
+                        <p class="about">${project.description}</p>
+                    `;
+
+                    grid.appendChild(card);
+                });
+            }
+
+            function filter(name) {
+                render(projects.filter(project => project.category === name));
+            }
+
+            filter('Featured');
+        </script>
+    </body>
+</html>
